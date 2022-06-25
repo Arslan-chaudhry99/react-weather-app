@@ -1,0 +1,175 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+ background-image: url(images/arsla2.jpg);
+ object-fit: cover;
+ background-size: cover;
+ background-repeat: no-repeat;
+ 
+
+}
+::selection{
+  color: #fff;
+  background: #43AFFC;
+}
+.wrapper{
+  width: 400px;
+ 
+  /* background-image: url(images/arslan_chaudhry.jpg); */
+  background-repeat: no-repeat;
+  filter: blur(0.4px);
+  -webkit-filter: blur(0.4px);
+  background-size: cover;
+  background-size: 100%;
+  border-radius: 7px;
+  /* box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05); */
+}
+.wrapper header{
+  display: flex;
+  font-size: 21px;
+  font-weight: 500;
+  color: white;
+  padding: 16px 15px;
+  align-items: center;
+
+}
+header i{
+  font-size: 0em;
+  cursor: pointer;
+  margin-right: 8px;
+}
+.wrapper.active header i{
+  margin-left: 5px;
+  font-size: 30px;
+}
+
+
+/* input part */
+
+.input_part{
+  width: 100%;
+  height: auto;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding: 5px;
+}
+
+.input_part  input{
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  border: 0;
+  outline: none;
+  border-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0;
+}
+.input_part  button{
+
+font-weight: bolder;
+  padding: 10px 30px;
+  text-align: center;
+width: auto;
+border: 0;
+cursor: pointer;
+border-radius: 10px;
+border-bottom-left-radius: 0px;
+border-top-left-radius: 0;
+}
+.input_part button i:hover{
+color: red;
+}
+.mode{
+  font-size: 40px;
+}
+.weather_part{
+  width: 100%;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.weather_part img{
+  margin-left: 10%;
+}
+.weather_info{
+  margin-left: 40px;
+  color: white;
+  margin-top: 30px;
+  font-weight: 600;
+}
+.temreture{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  color: white;
+}
+.other_info{
+  color: white;
+  height: auto;
+  width: 100%;
+}
+.more{
+display: flex;
+align-items: center;
+padding-left: 6px;
+border: 0.1px solid white;
+margin-bottom: 3px;
+border-radius: 3px;
+border-radius: 10px;
+}
+.more p{
+margin-left: 7px;
+}
+.more .hed{
+font-weight: 900;
+}
+
+.size{
+font-weight: 100;
+color: beige;
+  font-size: 29px;
+}
+.inlin{
+  display: inline-flex;
+}
+.more p{
+  font-size: 15px;
+  font-weight: 500;
+}
+.messge{
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+background-color: white;
+width: 100%;
+border-radius: 10px;
+
+}
+.message_type{
+
+color: rgb(236, 10, 10);
+  border: 0;
+  font-weight: 900;
+}
+@media screen and (max-width: 992px) {
+  .wrapper{
+    width: 100%;
+
+  }
+}
