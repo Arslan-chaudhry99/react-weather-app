@@ -20,11 +20,26 @@ function App() {
       let sunSetValue = sunset;
       let date = new Date(sunSetValue * 1000);
       let hours = date.getHours();
+      let hour=()=>{
+        if(!hours){
+          return `${hours-12}`
+        }else{
+          return hours
+        }
+      }
       let min = date.getMinutes();
+      let mint=()=>{
+        if(min <10){
+          return `0${min}`
+        }
+        else{
+          return min
+        }
+      }
       let cond = () => {
         return hours > 12 ? "PM" : "AM";
       };
-      const setTime = `${hours}:${min}:${cond()}`;
+      const setTime = `${hour()} : ${mint()} ${cond()}`;
      
       const resInfo = {
         temp,
