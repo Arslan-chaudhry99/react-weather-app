@@ -21,7 +21,7 @@ function App() {
       let date = new Date(sunSetValue * 1000);
       let hours = date.getHours();
       let hour=()=>{
-        if(!hours){
+        if(hours>12){
           return `${hours-12}`
         }else{
           return hours
