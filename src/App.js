@@ -54,7 +54,7 @@ function App() {
       
       setcompleteInfo(resInfo);
     } catch (error) {
-      console.log(error);
+      alert('seem like location not exist')
     }
   };
   // it will run after page refreshing
@@ -101,11 +101,10 @@ useEffect(()=>{
     }
   }
 },[weatherMood])
+
   return (
     <>
-     {/* <div className={"more message_type"}>
-            <p className="messge"><h4>Alert</h4>:Seem like location not correct!</p>
-      </div> */}
+
       <div class="wrapper">
      
         <header>Arslan Chaudhry</header>
