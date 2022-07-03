@@ -12,6 +12,7 @@ function App() {
       setsearchedValue("");
       const res = await fetch(url);
       const data = await res.json();
+     
       const { temp, humidity, pressure } = data.main;
       const { main: weatherMood } = data.weather[0];
       const { name } = data;
@@ -61,7 +62,9 @@ function App() {
   useEffect(() => {
     getInfo();
   }, []);
-
+const empty=()=>{
+  alert("Please enter you query")
+}
   const {
     temp,
     humidity,
@@ -105,12 +108,12 @@ useEffect(()=>{
   return (
     <>
 
-      <div class="wrapper">
+      <div className="wrapper">
      
-        <header>Arslan Chaudhry</header>
-        <section class="input-part">
-          <div class="content">
-            <div class="input_part">
+        <header className="design">Developed By: Arslan Chaudhry</header>
+        <section className="input-part">
+          <div className="content">
+            <div className="input_part">
               <input
                 type="text"
                 placeholder="Search Your Location"
@@ -118,41 +121,43 @@ useEffect(()=>{
                 onChange={(e) => {
                   setsearchedValue(e.target.value);
                 }}
-              /><button onClick={getInfo}>
-                <i class="bi bi-search"></i>
-              </button>
+              />
+              {
+                searchedValue ? <button onClick={getInfo}><i class="bi bi-search"></i></button>:<button onClick={empty}><i class="bi bi-search"></i></button>
+              }
+             
             </div>
-            <div class="weather_part">
-              <div class="temreture">
-                <i class={`bi ${curentWeather} mode`}></i>
+            <div className="weather_part">
+              <div className="temreture">
+                <i className={`bi ${curentWeather} mode`}></i>
                 <h1>{temp}&deg;</h1>
               </div>
-              <div class="weather_info">
+              <div className="weather_info">
                 <div>{weatherMood}</div>
-                <div class="locatio">
-                  {name},{country} <i class="bi bi-geo-alt-fill"></i>
+                <div className="locatio">
+                  {name},{country} <i className="bi bi-geo-alt-fill"></i>
                 </div>
               </div>
             </div>
           </div>
-          <div class="other_info">
+          <div className="other_info">
             <div className="more">
-              <i class="bi bi-sunset size"></i>
+              <i className="bi bi-sunset size"></i>
               <p className="inlin hed">SUN SET :</p>
               <p className="inlin">{setTime}</p>
             </div>
             <div className="more">
-            <i class="bi bi-wind size"></i>
+            <i className="bi bi-wind size"></i>
               <p className="hed">Wind :</p>
               <p>{speed}</p>
             </div>
             <div className="more">
-            <i class="bi bi-cloud-haze size"></i>
+            <i className="bi bi-cloud-haze size"></i>
               <p className="hed">Pressure :</p>
               <p>{pressure}</p>
             </div>
             <div className="more">
-            <i class="bi bi-droplet size"></i>
+            <i className="bi bi-droplet size"></i>
               <p className="hed">Humidity :</p>
               <p >{humidity}</p>
             </div>

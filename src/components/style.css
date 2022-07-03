@@ -91,6 +91,9 @@ border-top-left-radius: 0;
 .input_part button i:hover{
 color: red;
 }
+.design{
+  text-align: center;
+}
 .mode{
   font-size: 40px;
 }
