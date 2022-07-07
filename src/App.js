@@ -1,6 +1,7 @@
 import "./components/style.css";
 import { useState } from "react";
 import { useEffect } from "react";
+import image from "./components/images/arsla2.jpg"
 function App() {
   const [searchedValue, setsearchedValue] = useState("lahore");
   const [completeInfo, setcompleteInfo] = useState({});
@@ -108,8 +109,8 @@ useEffect(()=>{
   return (
     <>
 
+      <img src={image} className='bcImage' />
       <div className="wrapper">
-     
         <header className="design">Developed By: Arslan Chaudhry</header>
         <section className="input-part">
           <div className="content">
@@ -143,23 +144,23 @@ useEffect(()=>{
           <div className="other_info">
             <div className="more">
               <i className="bi bi-sunset size"></i>
-              <p className="inlin hed">SUN SET :</p>
+              <p className="inlin hed">SUN SET:</p>
               <p className="inlin">{setTime}</p>
             </div>
             <div className="more">
             <i className="bi bi-wind size"></i>
-              <p className="hed">Wind :</p>
-              <p>{speed}</p>
+              <p className="hed">Wind:</p>
+              <p>{speed} m/s</p>
             </div>
             <div className="more">
             <i className="bi bi-cloud-haze size"></i>
-              <p className="hed">Pressure :</p>
-              <p>{pressure}</p>
+              <p className="hed">Pressure:</p>
+              <p>{pressure} pa</p>
             </div>
             <div className="more">
             <i className="bi bi-droplet size"></i>
-              <p className="hed">Humidity :</p>
-              <p >{humidity}</p>
+              <p className="hed">Humidity:</p>
+              <p >{humidity} kg-1 </p>
             </div>
           </div>
         </section>

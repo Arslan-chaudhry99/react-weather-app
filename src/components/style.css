@@ -8,16 +8,25 @@
 }
 body{
   
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   min-height: 100vh;
- background-image: url(images/arsla2.jpg);
- object-fit: cover;
- background-size: cover;
- background-repeat: no-repeat;
- 
-
+ /* background-image: url(images/arsla2.jpg); */
+position: relative;
+}
+.bcImage{
+  position: absolute;
+  object-fit: cover;
+  object-position: top;
+  z-index: -1;
+width: 100vw;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
 }
 ::selection{
   color: #fff;
@@ -25,15 +34,6 @@ body{
 }
 .wrapper{
   width: 400px;
- 
-  /* background-image: url(images/arslan_chaudhry.jpg); */
-  background-repeat: no-repeat;
-  filter: blur(0.4px);
-  -webkit-filter: blur(0.4px);
-  background-size: cover;
-  background-size: 100%;
-  border-radius: 7px;
-  /* box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05); */
 }
 .wrapper header{
   display: flex;
@@ -75,6 +75,7 @@ header i{
   border-radius: 10px;
   border-bottom-right-radius: 0px;
   border-top-right-radius: 0;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .input_part  button{
 
@@ -87,6 +88,7 @@ cursor: pointer;
 border-radius: 10px;
 border-bottom-left-radius: 0px;
 border-top-left-radius: 0;
+box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .input_part button i:hover{
 color: red;
