@@ -2,6 +2,8 @@ import "./components/style.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import image from "./components/images/arsla2.jpg"
+import icon from "./components/images/wind pressure.png"
+import humi from "./components/images/humidity.png"
 function App() {
   const [searchedValue, setsearchedValue] = useState("lahore");
   const [completeInfo, setcompleteInfo] = useState({});
@@ -153,18 +155,22 @@ useEffect(()=>{
               <p>{speed} m/s</p>
             </div>
             <div className="more">
-            <i className="bi bi-cloud-haze size"></i>
+              <img src={icon} alt="" className="custom_icon"/>
+            {/* <i className="bi bi-cloud-haze size"></i> */}
               <p className="hed">Pressure:</p>
               <p>{pressure} pa</p>
             </div>
             <div className="more">
-            <i className="bi bi-droplet size"></i>
+              <img src={humi} alt="" className="custom_icon" />
+            {/* <i className="bi bi-droplet size"></i> */}
               <p className="hed">Humidity:</p>
               <p >{humidity} kg-1 </p>
             </div>
           </div>
         </section>
       </div>
+
+      
     </>
   );
 }
