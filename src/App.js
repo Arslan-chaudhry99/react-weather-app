@@ -24,7 +24,7 @@ function App() {
   const removeAll = () => {
     setItems([]);
   };
-  Items.reverse();
+
   var lenthOfArry = Items.length;
   const globalSearch = () => {
     document.getElementById("wrapper").classList.add("wrap_blur");
@@ -39,7 +39,9 @@ function App() {
       name: searchedValue,
     };
 
-    setItems([...Items, searchObj]);
+const listItems=[...Items]
+listItems.unshift(searchObj)
+    setItems(listItems);
     display.style.display = "none";
   };
   const remove = (index) => {
@@ -203,6 +205,7 @@ function App() {
                   setsearchedValue(e.target.value);
                 }}
                 onClick={displaySearch}
+                maxLength="15"
               />
               {searchedValue ? (
                 <button onClick={globalSearch}>
@@ -229,7 +232,7 @@ function App() {
               {Items.length === 0 ? (
                 <div className="error_searcher" id="error_searcher">
                   <img src={search} alt="" className="his_icon" />
-                  <h4>No Search History Yet!</h4>
+                  <h4>No History Found!</h4>
                 </div>
               ) : null}
               {Items.map((e, index) => {

@@ -217,7 +217,18 @@ color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-
+margin-top: 20%;
+flex-direction: column;
+}
+.error_searcher img{
+  opacity: 0.6;
+  margin-bottom: 10px;
+  width: 20%;
+}
+.error_searcher h4{
+  font-weight: 700;
+  color: red;
+  opacity: 0.6;
 }
 /* .del{
   background-color: rgb(29, 29, 29);
@@ -287,6 +298,7 @@ cursor: pointer;
 right: 50%;
 top: 40%;
 display: none;
+
 }
 .wrap_blur{
   filter: blur(10px);
