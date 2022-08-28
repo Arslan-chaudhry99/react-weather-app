@@ -8,7 +8,11 @@ import head_close from "./components/images/cross-head.png";
 import deleterItem from "./components/images/close.png";
 import search from "./components/images/history.png";
 import preload from "./components/images/preloader.gif";
+import { useMemo } from "react";
+
 function App() {
+  
+ let audio= new Audio("./components/tone.m4r")
   var gitHistoryData = () => {
     let list = localStorage.getItem("query");
     if (list) {
@@ -27,8 +31,8 @@ function App() {
 
   var lenthOfArry = Items.length;
   const globalSearch = () => {
-    document.getElementById("wrapper").classList.add("wrap_blur");
-    document.querySelector(".preloadImage").style.display = "block";
+     document.getElementById("wrapper").classList.add("wrap_blur");
+     document.querySelector(".preloadImage").style.display = "block";
     getInfo();
     saveSearch();
   };
@@ -66,9 +70,9 @@ listItems.unshift(searchObj)
       const res = await fetch(url);
       const data = await res.json();
       if (data) {
-        console.log("yes");
+        
         document.getElementById("wrapper").classList.remove("wrap_blur");
-        document.querySelector(".preloadImage").style.display = "none";
+       document.querySelector(".preloadImage").style.display = "none";
       }
 
       const { temp, humidity, pressure } = data.main;
@@ -111,8 +115,9 @@ listItems.unshift(searchObj)
       };
       setcompleteInfo(resInfo);
     } catch (error) {
-      document.getElementById("wrapper").classList.remove("wrap_blur");
-      document.querySelector(".preloadImage").style.display = "none";
+      
+       document.getElementById("wrapper").classList.remove("wrap_blur");
+       document.querySelector(".preloadImage").style.display = "none";
       if (navigator.onLine) {
         alert("City name is not correct or spelling mistake. Note! You can only search the data of big citys.It's a free api. Thanks! regard Arslan Chaudhry.");
       }
@@ -184,12 +189,17 @@ listItems.unshift(searchObj)
       }
     }
   }, [weatherMood]);
+const valuesData=useMemo(()=>{
+return Items
+},[searchedValue]);
 
   return (
     <>
       <img src={image} className="bcImage" alt="img" />
 
+
       <img src={preload} alt="img" className="preloadImage" />
+
 
       <div className="wrapper " id="wrapper">
        
@@ -238,7 +248,7 @@ listItems.unshift(searchObj)
               {Items.map((e, index) => {
                 return (
                   <>
-                    <div className="search_items">
+                    <div className="search_items" >
                       <div className="ser_main">
                         <img src={search} alt="" className="his_icon" />
                         <span
@@ -307,7 +317,9 @@ listItems.unshift(searchObj)
             </div>
           </div>
         </section>
+      
       </div>
+     
     </>
   );
 }

@@ -294,11 +294,12 @@ cursor: pointer;
   border-radius: 2px;
 }
 .preloadImage{
-  position: absolute;
-right: 50%;
-top: 40%;
-display: none;
 
+position: absolute;
+top: 0%;
+z-index: 99;
+width: 380px;
+margin-top: 200px;
 }
 .wrap_blur{
   filter: blur(10px);
